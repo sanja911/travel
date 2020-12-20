@@ -5,8 +5,7 @@
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 ![](https://img.shields.io/badge/status-stable-green.svg)
 
-Aplikasi pemesanan tiket berbasis web menggunakan ci 3.1.10, dikembangkan dari aplikasi pemesanan tiket bus oleh repository milik bahyusanciko (https://github.com/bahyusanciko/Tiket-Bus)
-
+Aplikasi pemesanan tiket berbasis web menggunakan ci 3.1.10, 
 Fitur :
 
 - User Pelanggan Dengan verfikasi email
