@@ -31,33 +31,30 @@
 						<form action="<?php echo base_url() ?>tiket/gettiket/" method="post">
 						<input type="hidden" name="tgl" value="<?php echo $tglberangkat ?>">
 
-							<?php $i = 1; foreach ($kursi as $row ) { ?>
+							<!-- <?php $i = 1; foreach ($kursi as $row ) { ?> -->
 							<div class="card mb-5">
-								<div class="card-header">
-									<i class="fa fa-id-card-o"></i> Kursi Nomor <?php echo $row; ?>
-								</div>
-								<div class="card-body">
-									<div class="form-group">
-										<input type="text" id="" class="form-control" id="" name="nama[]" placeholder="Kursi nomor <?php echo $row ?> Atas Nama" required>
-										<input type="hidden" name="kursi[]" value="<?php echo $row ?>">
-									</div>
-									<div class="form-group">
-										<select name="tahun[]" class="form-control js-example-basic-single" required>
-											<option value="" selected disabled="">Umur Penumpang</option>
-											<?php
-											$thn_skr = 90;
-											for ($x = $thn_skr; $x >= 1; $x--) {
-											?>
-											<option value="<?php echo $x ?>"><?php echo $x ?> Tahun</option>
-											<?php
-											}
-											?>
-										</select>
-									</div>
-								</div>
+							<div class="card-header">
+								<i class="fa fa-info-circle"></i> Keterengan Tiket
 							</div>
-							<?php } ?>
+							<div class="card-body">
+								<ul>
+									<li>► Jurusan <b><?php echo $asal['kota_tujuan']." - ".$jadwal['kota_tujuan']." [".$jadwal['kd_jadwal']."]";?></b></li>
+									<li>► Berangkat dari <b><?php echo strtoupper($asal['kota_tujuan'])." - ".$asal['terminal_tujuan'];?></b></li>
+									<li>► Turun di <b><?php echo strtoupper($jadwal['kota_tujuan'])." - ".$jadwal['terminal_tujuan'];?></b></li>
+									<li>► Harga tiket: <b>Rp <?php echo number_format((float) ($jadwal['harga_jadwal']), 0, ",", ".");?>,-</b></li>
+									<li>► Berangkat hari <b><?php echo nama_hari($tanggal).",".tgl_indo($tanggal)?></b></li>
+									<li>► Jam keberangkatan <b>pukul <?php echo $jadwal['jam_berangkat_jadwal'];?> WIB</b></li>
+									<li>► Jam Tiba <b>pukul <?php echo $jadwal['jam_tiba_jadwal'];?> WIB</b></li>
+									<li>► Silahkan pilih kursi</li>
+									<li>► Pilih maksimal 4 kursi</li>
+								</ul>
+							</div>
+							</div>
+							<!-- <?php } ?> -->
+							
 						</div>
+						
+					
 						<div class="col-lg-5">
 							<!-- Default Card Example -->
 							<!-- Default Card Example -->

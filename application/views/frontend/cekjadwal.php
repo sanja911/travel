@@ -40,7 +40,6 @@
 											<th scope="col">Trayek [Kode Jadwal]</th>
 											<th>Terminal Tujuan</th>
 											<th scope="col">Hari [jam]</th>
-											<th scope="col">Kursi Tersedia</th>
 											<th>Harga</th>
 											<th scope="col">Tiket</th>
 										</tr>
@@ -51,9 +50,8 @@
 											<td><?php echo strtoupper($asal['kota_tujuan'])." - ".strtoupper($jadwal[$i]['kota_tujuan'])." [".$jadwal[$i]['kd_jadwal']."]"; ?></td>
 											<td><?php echo '['.$jadwal[$i]['nama_terminal_tujuan'].']'.$jadwal[$i]['terminal_tujuan'] ?></td>
 											<td><?php echo hari_indo(date('N',strtotime($tanggal))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$tanggal.''))).', '.date('H:i',strtotime($jadwal[$i]['jam_berangkat_jadwal'])); ?></td>
-											<td><?php echo $jadwal[$i]['kapasitas_bus']-$kursi[$i][0]['count(no_kursi_order)'] ?></td>
 											<td>Rp <?php echo number_format((float)($jadwal[$i]['harga_jadwal']),0,",","."); ?>,-</td>
-											<td><a href="<?php echo base_url('tiket/beforebeli/').$jadwal[$i]['kd_jadwal'].'/'.$asal['kd_tujuan'].'/'.$tanggal ?>" class=" btn btn-primary">Pilih</a></td>
+											<td><a href="<?php echo base_url('tiket/afterbeli/').$jadwal[$i]['kd_jadwal'].'/'.$asal['kd_tujuan'].'/'.$tanggal ?>" class=" btn btn-primary">Pilih</a></td>
 										</tr>
 										<?php } ?>
 									</tbody>

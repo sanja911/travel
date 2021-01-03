@@ -128,11 +128,12 @@ class Login extends CI_Controller {
 			'protocol'  => 'smtp',
 			'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_user' => 'avi.sanja@gmail.com',    // Ganti dengan email gmail kamu
-               'smtp_pass' => 'anonymous911',      // Password gmail kamu
-               'smtp_port' => 465,
+            'smtp_pass' => 'anonymous911',      // Password gmail kamu
+            'smtp_port' => 465,
                'crlf'      => "rn",
                'newline'   => "rn"
-           ];
+		   ];
+		   $config['protocol'] = 'smtp';
            $this->load->library('email', $config);
            $this->email->set_newline("\r\n");
            $this->email->from('XTRANS');
