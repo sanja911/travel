@@ -50,9 +50,9 @@
 											<tr>
 												<?php $now = hari_indo(date('N',strtotime($row['tgl_berangkat_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$row['tgl_berangkat_order'].''))).', '.date('H:i',strtotime($row['jam_berangkat_jadwal']));?>
 												<th scope="row"><?php echo $row['kd_tiket']; ?></th>
-												<td><?php echo $row['kd_jadwal']." [".$row['kd_bus'].']' ?></td>
+												<td><?php echo $row['kd_jadwal']?></td>
 												<td><?php echo $now?></td>
-												<td><?php echo $row['no_kursi_order']; ?></td>
+<!--												<td>--><?php //echo $row['no_kursi_order']; ?><!--</td>-->
 												<td>Rp <?php echo $row['harga_jadwal']; ?></td>
 											</tr>
 											<?php } ?>

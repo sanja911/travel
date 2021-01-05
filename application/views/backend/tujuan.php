@@ -30,8 +30,9 @@
                 <tr align="center">
                   <th>No</th>
                   <th>Kode</th>
-                  <th>Kota Tujuan</th>
-                  <th>Info Terminal</th>
+                  <th>Kecamatan</th>
+                  <th>Alamat</th>
+				  <th>Fasilitas</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -42,6 +43,7 @@
                   <td><?php echo $row['kd_tujuan']; ?></td>
                   <td><?php echo strtoupper($row['kota_tujuan']); ?></td>
                   <td><?php echo  substr($row['terminal_tujuan'], 0, 15); ?></td>
+				  <td><?php echo substr($row['fasilitas'],0,15);?></td>
                   <td align="center"><a href="<?php echo base_url('backend/rute/viewrute/'.$row['kd_tujuan']) ?>" class="btn btn-primary">VIEW</a></td>
                 </tr>
                 <?php } ?>
@@ -77,17 +79,22 @@
       </button>
     </div>
     <div class="modal-body">
-      <form action="<?php echo base_url() ?>backend/home/tambahtujuan" method="post" >
+      <form action="<?php echo base_url() ?>backend/rute/tambahtujuan/" method="post" >
         <div class="form-group">
           <div class="form-label-group">
-            <input type="text" id="tujuan" name="tujuan" class="form-control" placeholder="Tujuan" required="required" autofocus="autofocus">
+            <input type="text" id="tujuan" name="tujuan" class="form-control" placeholder="Kecamatan" required="required" autofocus="autofocus">
           </div>
         </div>
         <div class="form-group">
           <div class="form-label-group">
-            <input type="text" id="terminal" name="terminal" class="form-control" placeholder="Info Terminal" required="required" autofocus="autofocus">
+            <input type="text" id="terminal" name="terminal" class="form-control" placeholder="Alamat" required="required" autofocus="autofocus">
           </div>
         </div>
+		  <div class="form-group">
+			  <div class="form-label-group">
+				  <textarea id="fasilitas" name="fasilitas" class="form-control" placeholder="Fasilitas" required="required" autofocus="autofocus"></textarea>
+			  </div>
+		  </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button class="btn btn-primary">Tambah</button>

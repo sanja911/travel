@@ -46,19 +46,6 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label  class="">Bus</label>
-                    <select class="form-control" name="bus">
-                      <option value="" selected disabled="">-Pilih Bus-</option>
-                      <?php foreach ($bus as $row ) {?>
-                      <option value="<?php echo $row['kd_bus'] ?>" ><?php echo strtoupper($row['nama_bus']); ?> -<?php if ($row['status_bus'] == '1') { ?>
-                        Online
-                        <?php } else { ?>
-                        Offline
-                      <?php } ?>- </option>
-                      <?php } ?>
-                    </select>
-                  </div>
-                  <div class="form-group">
                     <label  class="">Jam Berangkat</label>
                     <input type="text" class="form-control"  id="time" name="berangkat" required="" placeholder="Jam Berangkat">
                   </div>

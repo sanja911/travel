@@ -19,13 +19,12 @@ class Jadwal extends CI_Controller {
 	}
 	public function index(){
 		$data['title'] = "List Tujuan";
-		$data['jadwal'] = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_bus on tbl_jadwal.kd_bus = tbl_bus.kd_bus LEFT JOIN tbl_tujuan on tbl_jadwal.kd_asal = tbl_tujuan.kd_tujuan ")->result_array();
+		$data['jadwal'] = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_tujuan on tbl_jadwal.kd_asal = tbl_tujuan.kd_tujuan ")->result_array();
 		// die(print_r($data));
 		$this->load->view('backend/jadwal', $data);
 	}
 	public function viewtambahjadwal($value=''){
 		$data['title'] = "Tambah Jadwal";
-		$data['bus'] = $this->db->query("SELECT * FROM tbl_bus ORDER BY nama_bus asc")->result_array();
 		$data['tujuan'] = $this->db->query("SELECT * FROM tbl_tujuan ORDER BY kota_tujuan asc")->result_array();
 		$this->load->view('backend/tambahjadwal', $data);
 	}
@@ -33,7 +32,6 @@ class Jadwal extends CI_Controller {
 		$this->form_validation->set_rules('tujuan', 'Tujuan', 'trim|required|min_length[5]|max_length[12]');
 		if ($this->form_validation->run() ==  FALSE) {
 			$data['title'] = "Tambah Jadwal";
-			$data['bus'] = $this->db->query("SELECT * FROM tbl_bus ORDER BY nama_bus asc")->result_array();
 			$data['tujuan'] = $this->db->query("SELECT * FROM tbl_tujuan ORDER BY kota_tujuan asc")->result_array();
 			$this->load->view('backend/tambahjadwal', $data);
 		} else {
@@ -49,7 +47,6 @@ class Jadwal extends CI_Controller {
 					'kd_jadwal' => $kode,
 					'kd_asal' => $asal,
 					'kd_tujuan' => $tujuan['kd_tujuan'],
-					'kd_bus' => $this->input->post('bus'),
 					'wilayah_jadwal' => $tujuan['kota_tujuan'],
 					'jam_berangkat_jadwal' => $this->input->post('berangkat'),
 					'jam_tiba_jadwal' => $this->input->post('tiba'),
@@ -66,7 +63,7 @@ class Jadwal extends CI_Controller {
 	}
 	public function viewjadwal($id=''){
 		$data['title'] = "List Tujuan";
-	 	$sqlcek = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_bus on tbl_jadwal.kd_bus = tbl_bus.kd_bus LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan WHERE kd_jadwal ='".$id."'")->row_array();
+	 	$sqlcek = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan WHERE kd_jadwal ='".$id."'")->row_array();
 	 	if ($sqlcek) {
 	 		$data['asal'] = $this->db->query("SELECT * FROM tbl_tujuan WHERE kd_tujuan = '".$sqlcek['kd_asal']."'")->row_array();
 	 		$data['jadwal'] = $sqlcek;

@@ -46,8 +46,7 @@
         </button>
       </div>
       <div class="modal-body">
-        [ ] dengan ❤ di Jakarta/Cengkareng <br>
-        By Bahyu Sanciko
+        By Sanja Avi
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

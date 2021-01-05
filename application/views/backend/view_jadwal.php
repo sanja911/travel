@@ -114,7 +114,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-6">
-                  <p>BUS     : <b> <?php echo $jadwal['kd_bus']." [".$jadwal['nama_bus'].'-'.$jadwal['plat_bus'] ?>]</b></p>
                   <p>Asal :  <b><?php echo strtoupper($asal['kota_tujuan'])." - ".$asal['terminal_tujuan']; ?></b></p>
                   <p>Tujuan  : <b><?php echo strtoupper($jadwal['kota_tujuan'])." - ".$jadwal['terminal_tujuan']; ?></b></p>
                   <p>Jam Berangkat    : <b><?php echo date('H:i',strtotime($jadwal['jam_berangkat_jadwal'])) ?></b></p>
@@ -126,7 +125,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </div>
             <hr>
             <a class="btn btn-default" href="javascript:history.back()"> Kembali</a>
-            <button data-toggle="modal" data-target="#edit" class="btn btn-primary pull-rigth">Edit</button>
+<!--            <button data-toggle="modal" data-target="#edit" class="btn btn-primary pull-rigth">Edit</button>-->
           </div>
       </div>
     </div>

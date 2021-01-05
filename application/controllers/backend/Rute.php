@@ -34,11 +34,12 @@ class Rute extends CI_Controller {
 			'kota_tujuan' => $this->input->post('tujuan'),
 			'kd_tujuan' => $kode,
 			'terminal_tujuan' => $this->input->post('terminal'),
+			'fasilitas' => $this->input->post('fasilitas')
 			 );
 		// die(print_r($data));
 		$this->db->insert('tbl_tujuan', $data);
 		$this->session->set_flashdata('message', 'swal("Data Berhasil Di Tambah");');
-		redirect('backend/home/tujuan');
+		redirect('backend/rute');
 	}
 }
 
