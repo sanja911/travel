@@ -44,7 +44,7 @@
                   <td><?php echo strtoupper($row['kota_tujuan']); ?></td>
                   <td><?php echo  substr($row['terminal_tujuan'], 0, 15); ?></td>
 				  <td><?php echo substr($row['fasilitas'],0,15);?></td>
-                  <td align="center"><a href="<?php echo base_url('backend/rute/viewrute/'.$row['kd_tujuan']) ?>" class="btn btn-primary">VIEW</a></td>
+                  <td align="center"><a href="<?php echo base_url('backend/rute/viewrute/'.$row['kd_tujuan']) ?>" class="btn btn-primary">VIEW</a> | <a href="<?php echo base_url('backend/rute/deleterute/'.$row['kd_tujuan']) ?>" class="btn btn-danger">DELETE</a></td>
                 </tr>
                 <?php } ?>
               </tbody>

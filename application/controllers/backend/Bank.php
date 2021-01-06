@@ -22,6 +22,10 @@ class Bank extends CI_Controller {
 		// die(print_r($data));
 	$this->load->view('backend/bank', $data);	
 	}
+	public function editbank($id=""){
+	$nasabah_bank => $this->input->post('nasabah');
+	$nomrek_bank => $this->input->post('norek');
+	}
 	public function viewbank($id=""){
 	$data['title'] = "Link BANK";
  	$data['bank'] = $this->db->query("SELECT * FROM tbl_bank WHERE kd_bank = '".$id."'")->row_array();

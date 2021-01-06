@@ -28,6 +28,11 @@ class Rute extends CI_Controller {
 		// die(print_r($data));
 		$this->load->view('backend/view_tujuan', $data);
 	}
+	public function  deleterute($id=''){
+		$data['rute'] = $this->db->query("DELETE tbl_tujuan, FROM tbl_tujuan INNER JOIN tbl_jadwal on tbl_tujuan.kd_tujuan=tbl_jadwal.kd_tujuan WHERE tbl_tujuan.kd_tujuan = '".$id."' "  );
+		$this->session->set_flashdata('message', 'swal("Data Berhasil Di Hapus");');
+		redirect('backend/rute');
+	}
 	public function tambahtujuan(){
 		$kode = $this->getkod_model->get_kodtuj();
 		$data = array(
