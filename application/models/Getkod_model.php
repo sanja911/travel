@@ -17,6 +17,20 @@ class Getkod_model extends CI_Model {
             return "J".$kd;
         }
 
+     function get_kodbank(){
+		 $q = $this->db->query("SELECT MAX(RIGHT(kd_bank,3)) AS kd_max FROM tbl_bank");
+		 $kd = "";
+		 if($q->num_rows()>0){
+			 foreach($q->result() as $k){
+				 $tmp = ((int)$k->kd_max)+1;
+				 $kd = sprintf("%04s", $tmp);
+			 }
+		 }else{
+			 $kd = "00001";
+		 }
+		 return "BNK".$kd;
+	}
+
     function get_kodtuj(){
             $q = $this->db->query("SELECT MAX(RIGHT(kd_tujuan,3)) AS kd_max FROM tbl_tujuan");
             $kd = "";
