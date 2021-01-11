@@ -71,27 +71,24 @@
     </button>
   </div>
   <div class="modal-body">
-    <form action="<?php echo base_url()?>backend/home/tambahbus" method="post">
+    <form action="<?php echo base_url()?>backend/bank/tambahbank" method="post">
       <div class="form-group">
-        <label for="platbus" class="">Plat BUS</label>
-        <input type="text" class="form-control" id="inputEmail3" name="kd_bus" placeholder="Plat Bus">
+        <label for="platbus" class="">Nama Nasabah</label>
+        <input type="text" class="form-control" id="inputEmail3" name="nasabah" placeholder="Nama Nasabah">
       </div>
       <div class="form-group">
-        <label for="seat" class="">Kelas</label>
-        <select class="form-control" name="kelas">
-          <option value="" disabled required>-Pilih Kelas-</option>
-          <option value="Business">Business</option>
-          <option value="Executive">Executive</option>
-          <option value="Super Executive">Super Executive</option>
+        <label for="seat" class="">Bank</label>
+        <select class="form-control" name="nama_bank">
+          <option value="" disabled required>-Pilih Bank-</option>
+          <option value="BCA">BCA</option>
+          <option value="BRI">BRI</option>
+          <option value="Mandiri">Mandiri</option>
+		  <option value="BNI">BNI</option>
         </select>
       </div>
-      <div class="form-group">
-        <label for="seat" class="">Jumlah Kursi</label>
-        <input type="number" class="form-control" id="seat" name="seat" placeholder="Jumlah Kursi">
-      </div>
-      <div class="form-group">
-        <label for="harga" class="">Harga Tiket</label>
-        <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga">
+		<div class="form-group">
+        <label for="seat" class="">No.Rekening</label>
+        <input type="number" class="form-control" id="norek" name="norek" placeholder="No.Rekening">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

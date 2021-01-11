@@ -6,6 +6,7 @@ class Bank extends CI_Controller {
 	parent::__construct();
 		$this->load->helper('tglindo_helper');
 		$this->load->model('getkod_model');
+		$this->load->library('form_validation');
 		$this->getsecurity();
 		date_default_timezone_set("Asia/Jakarta");
 	}
@@ -32,7 +33,7 @@ class Bank extends CI_Controller {
 	}
 	public function tambahbank (){
 		$this->form_validation->set_rules('nasabah', 'Nasabah', 'trim|required');
-		$this->form_validation->set_rules('norek', 'Norek', 'trim|required|min_length[8]|is_unique[bank.nomrek.bank]',array(
+		$this->form_validation->set_rules('norek', 'Norek', 'trim|required|min_length[8]|is_unique[tbl_bank.nomrek_bank]',array(
 			'required' => 'Email Wajib Di isi.',
 			'is_unique' => 'Username Sudah Di Gunakan'
 		));
@@ -40,17 +41,19 @@ class Bank extends CI_Controller {
 			'required' => 'Nama Bank Wajib Di isi.',
 		));
 		if ($this->form_validation->run() == false) {
-			$data['title'] = "Tambah Bank";
+			$data['viewbank'] = "Tambah Bank";
 			$this->load->view('backend/bank',$data);
 		} else {
 			// die(print_r($_POST));
 			$kode = $this->getkod_model->get_kodbank();
+			$nama_bank = $this->input->post('nama_bank');
+			$photo_bank = "assets/frontend/img/bank/".$nama_bank."-icon.jpg";
 			$data = array(
 				'kd_bank' => $kode,
 				'nasabah_bank' => $this->input->post('nasabah'),
 				'nomrek_bank'		 => $this->input->post('norek'),
-				'nama_bank'		=> $this->input->post('nama_bank'),
-				'photo_bank' => $this->input->post('photo_bank')
+				'nama_bank'		=> $nama_bank,
+				'photo_bank' => $photo_bank
 			);
 			$this->db->insert('tbl_bank', $data);
 			$this->session->set_flashdata('message', 'swal("Berhasil", "Berhasil Tambah Rekening", "success");');

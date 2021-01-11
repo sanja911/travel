@@ -121,8 +121,8 @@ if(!function_exists('strcode2utf')){
 	//converts all the &#nnn; and &#xhhh; in a string to Unicode
 	// mPDF 5.7
 	if ($lo) {
-		$str = preg_replace_callback('/\&\#([0-9]+)\;/m', 'code2utf_lo_callback', $str);
-		$str = preg_replace_callback('/\&\#x([0-9a-fA-F]+)\;/m', 'codeHex2utf_lo_callback', $str);
+		$str = preg_replace_callback('/\&\#([0-9]+)\;/m', function($m) use ($lo){return code2utf($m[1],$lo); }, $str);
+		$str = preg_replace_callback('/\&\#x([0-9a-fA-F]+)\;/m', function($m) use ($lo){return codeHex2utf($m[1],$lo);}, $str);
 	}
 	else {
 		$str = preg_replace_callback('/\&\#([0-9]+)\;/m', 'code2utf_callback', $str);
