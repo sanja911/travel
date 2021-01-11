@@ -140,10 +140,10 @@ class Login extends CI_Controller {
            $this->email->to($this->input->post('email'));
         // $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
            if ($type == 'verify') {
-           	$this->email->subject('Account verify Tiket XTRANS');
+           	$this->email->subject('Account verify BOS TRAVEL');
            	$this->email->message('Klik link tersebut untuk verifikasi akun anda <a href="'.base_url('login/verify?email='.$this->input->post('email').'&token='.$token).'" >Verifikasi</a>');
            }elseif ($type == 'forgot') {
-           	$this->email->subject('Akun Reset Tiket XTRANS');
+           	$this->email->subject('Akun Reset BOS TRAVEL');
            	$this->email->message('Klik link tersebut untuk Reset akun anda <a href="'.base_url('login/forgot?email='.$this->input->post('email').'&token='.$token).'" >Reset Password</a>');
            }
            if ($this->email->send()) {

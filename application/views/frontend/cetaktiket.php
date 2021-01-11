@@ -136,11 +136,11 @@
 
     <div id="body">
         <ol type="1">
-          <li>Tiket XTRANS * HANYA agen tiket bus. Ini tidak mengoperasikan layanan bus
+          <li>BOS TRAVEL * HANYA agen tiket bus. Ini tidak mengoperasikan layanan bus
             itu sendiri. Untuk menyediakan pilihan operator bus yang komprehensif,
             waktu keberangkatan dan harga untuk pelanggan, telah terikat dengan banyak bus
             operator.
-            Saran Tiket XTRANS kepada pelanggan adalah memilih operator bus yang mereka ketahui
+            Saran BOS TRAVEL kepada pelanggan adalah memilih operator bus yang mereka ketahui
             dari dan yang layanannya mereka merasa nyaman.</li>
           <li>Waktu keberangkatan yang disebutkan di tiket hanyalah waktu tentatif. Namun
             bus tidak akan meninggalkan sumber sebelum waktu yang disebutkan pada tiket.
@@ -148,20 +148,20 @@
              (1) Salinan tiket (Cetak tiket atau cetak email tiket).
              (2) Bukti identitas yang valid
             Gagal melakukannya, mereka mungkin tidak diizinkan naik bus.</li>
-           <li>Tanggung jawab Tiket XTRANS meliputi:
+           <li>Tanggung jawab BOS TRAVEL meliputi:
             (1) Mengeluarkan tiket yang valid (tiket yang akan diterima oleh bus)
             operator) untuk jaringan operator busnya
             (2) Memberikan pengembalian dana dan dukungan jika terjadi pembatalan
             (3) Memberikan dukungan dan informasi pelanggan jika ada penundaan /
             kerepotan
             Ganti bus: Jika operator bus mengubah jenis bus karena beberapa
-            alasannya, Tiket XTRANS akan mengembalikan jumlah diferensial kepada pelanggan setelah menjadi
+            alasannya, BOS TRAVEL akan mengembalikan jumlah diferensial kepada pelanggan setelah menjadi
             diintimidasi oleh pelanggan dalam 24 jam perjalanan.</li>
             <li> Kebijakan Pembatalan: Untuk SVR Tours & Travels: Antara 0 jam hingga 7 jam sebelumnya
         perjalanan, biaya pembatalan adalah 100,0%. Antara 7 jam hingga 8 jam sebelumnya
         perjalanan, biaya pembatalan adalah 50,0%. Dan, biaya pembatalan di atas adalah
         10,0%.</li>
-        <li>Tanggung jawab Tiket XTRANS TIDAK termasuk:
+        <li>Tanggung jawab BOS TRAVEL TIDAK termasuk:
         (1) Bus operator bus tidak berangkat / mencapai tepat waktu
         (2) Karyawan operator bus bersikap kasar
         (3) Kursi bus operator dll tidak sesuai dengan pelanggan
@@ -175,7 +175,7 @@
         traveler di bus tertentu)
         (8) Operator bus mengubah titik boarding dan / atau menggunakan pick-up
         Jika seseorang membutuhkan pengembalian dana untuk dikreditkan kembali ke rekening banknya, silakan
-        tulis rincian kupon tunai Anda ke support@Tiket XTRANS.in
+        tulis rincian kupon tunai Anda ke support@BOS TRAVEL.in
         * Biaya pengiriman ke rumah (jika ada), tidak akan dikembalikan dalam hal tiket
         pembatalan</li>
         <li>Jika email konfirmasi pemesanan dan sms tertunda atau gagal karena

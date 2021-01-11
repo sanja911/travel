@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>BUS XTRANS</title>
+		<title>BOS TRAVEL</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--
 		CSS
@@ -57,10 +57,10 @@
 					<div class="banner-content col-lg-7 col-md-12">
 						<h4  class="combined">Jaminan Tiket Resmi</h4>
 							<h2 class="combined" >
-						Tiket XTRANS dijamin resmi, pastikan Anda bisa pergi!				
+						BOS TRAVEL dijamin resmi, pastikan Anda bisa pergi!
 							</h2>
 						<p class="border-black" >
-							Sekarang cari tiket bus semakin mudah, bisa pesan online di Tiket XTRANS. Tak perlu repot ke terminal atau kantor agen, sekarang Anda bisa beli tiket dengan mudah. Booking Cepat dan Mudah. Bebas Pilih Kursi. Termurah Setiap Hari. Customer Service 24/7. Semua Kelas dan Rute.
+							Sekarang cari tiket bus semakin mudah, bisa pesan online di BOS TRAVEL. Tak perlu repot ke terminal atau kantor agen, sekarang Anda bisa beli tiket dengan mudah. Booking Cepat dan Mudah. Bebas Pilih Kursi. Termurah Setiap Hari. Customer Service 24/7. Semua Kelas dan Rute.
 						</p>
 						<a href="<?php echo base_url() ?>tiket" class="primary-btn header-btn text-uppercase">Cari Tiket</a>
 					</div>
@@ -113,7 +113,7 @@
 			<div class="container">
 				<div class="row d-flex justify-content-center">
 					<div class="col-md-8 pb-40 header-text">
-						<h1>CARA PEMESANAN TIKET BIS</h1>
+						<h1>CARA PEMESANAN</h1>
 					</div>
 				</div>
 				<div class="row">
@@ -124,15 +124,6 @@
 							</h4>
 							<p>
 								Masukkan tempat keberangkatan, tujuan, tanggal perjalanan dan kemudian klik 'Cari'
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="single-service">
-							<img class="img-fluid" src="<?php echo base_url() ?>assets/frontend/img/a3.png" width="100" height="100" alt="">
-							<h4>Pilih bis dan tempat duduk anda</h4>
-							<p>
-								Pilih bis, tempat duduk, tempat keberangkatan, tujuan, isi rincian penumpang dan klik 'Pembayaran'
 							</p>
 						</div>
 					</div>

@@ -5,16 +5,14 @@
 							<div class="single-footer-widget">
 								<h4 class="text-white">Tiket BUS</h4>
 								<p>
-									Tiket BUS adalah jasa pemesanan tiket bis secara online terbesar di dunia. Telah dipercaya lebih dari 8 juta pelanggan secara global. redBus menawarkan pemesanan tiket bis melalui website, iOS dan aplikasi android untuk rute-rute utama di Singapura, Malaysia, dan Indonesia.
+<!--									Tiket BUS adalah jasa pemesanan tiket bis secara online terbesar di dunia. Telah dipercaya lebih dari 8 juta pelanggan secara global. redBus menawarkan pemesanan tiket bis melalui website, iOS dan aplikasi android untuk rute-rute utama di Singapura, Malaysia, dan Indonesia.-->
 								</p>
 							</div>
 						</div>
 						<div class="col-lg-4  col-md-6 col-sm-6">
 							<div class="single-footer-widget">
 								<h4 class="text-white">Contact Us</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
-								</p>
+
 								<p class="number">
 									012-6532-568-9746 <br>
 									012-6532-569-9748
