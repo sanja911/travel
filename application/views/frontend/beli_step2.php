@@ -45,8 +45,7 @@
 									<li>► Berangkat hari <b><?php echo nama_hari($tanggal).",".tgl_indo($tanggal)?></b></li>
 									<li>► Jam keberangkatan <b>pukul <?php echo $jadwal['jam_berangkat_jadwal'];?> WIB</b></li>
 									<li>► Jam Tiba <b>pukul <?php echo $jadwal['jam_tiba_jadwal'];?> WIB</b></li>
-									<li>► Silahkan pilih kursi</li>
-									<li>► Pilih maksimal 4 kursi</li>
+
 								</ul>
 							</div>
 							</div>

@@ -45,7 +45,7 @@
                   <td><?php echo $row['nomrek_bank']; ?></td>
                   <td><?php echo $row['nasabah_bank']; ?></td>
                   <td align="center"><a href="<?php echo base_url('backend/bank/viewbank/'.$row['kd_bank']) ?>" class="btn btn btn-primary">View</a></a>
-                </td>
+				</td>
               </tr>
               <?php } ?>
             </tbody>

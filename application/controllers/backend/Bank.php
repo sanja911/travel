@@ -42,20 +42,15 @@ class Bank extends CI_Controller {
 		));
 		if ($this->form_validation->run() == false) {
 			$data['viewbank'] = "Tambah Bank";
-			$this->load->view('backend/bank',$data);
+			redirect('backend/bank');
 		} else {
 			// die(print_r($_POST));
-			$kode = $this->getkod_model->get_kodbank();
 			$nama_bank = $this->input->post('nama_bank');
 			$photo_bank = "assets/frontend/img/bank/".$nama_bank."-icon.jpg";
-			$data = array(
-				'kd_bank' => $kode,
-				'nasabah_bank' => $this->input->post('nasabah'),
-				'nomrek_bank'		 => $this->input->post('norek'),
-				'nama_bank'		=> $nama_bank,
-				'photo_bank' => $photo_bank
-			);
-			$this->db->insert('tbl_bank', $data);
+			$nasabah_bank = $this->input->post('nasabah');
+			$nomrek_bank = $this->input->post('norek');
+
+			$this->db->query("UPDATE tbl_bank SET nasabah_bank = '$nasabah_bank',nama_bank='$nama_bank', nomrek_bank='$nomrek_bank',photo_bank='$photo_bank' WHERE nama_bank LIKE %'$nama_bank'% ");
 			$this->session->set_flashdata('message', 'swal("Berhasil", "Berhasil Tambah Rekening", "success");');
 			redirect('backend/bank');
 		}

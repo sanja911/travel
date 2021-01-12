@@ -35,9 +35,9 @@
         <a class="nav-link" href="<?php echo base_url() ?>backend/rute">
           <i class="fas fa fa-compass"></i>
           <span>Tujuan</span></a>
-        <a class="nav-link" href="<?php echo base_url() ?>backend/bus">
-          <i class="fas fa fa-bus"></i>
-          <span>Bus</span></a>
+<!--        <a class="nav-link" href="--><?php //echo base_url() ?><!--backend/bus">-->
+<!--          <i class="fas fa fa-bus"></i>-->
+<!--          <span>Bus</span></a>-->
         <?php if ($this->session->userdata('level') == '1') { ?>
            <a class="nav-link" href="<?php echo base_url() ?>backend/bank">
           <i class="fas fa fa-link"></i>
