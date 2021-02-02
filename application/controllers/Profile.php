@@ -26,8 +26,8 @@ class Profile extends CI_Controller {
 			'telpon_pelanggan'		=> $this->input->post('hp'),
 			 );
 		$this->db->update('tbl_pelanggan', $update,$where);
-		$this->session->set_flashdata('message', 'swal("Berhasil", "Data Di Edit", "success");');
-		redirect('profile/profilesaya/'.$id);
+		$this->session->set_flashdata('message', 'swal("Berhasil", "Data Profil Sukses Di Edit,Silahkan Relogin", "success");');
+		redirect('login/');
 	}
 	public function tiketsaya($id=''){
 		$this->getsecurity();

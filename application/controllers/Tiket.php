@@ -84,35 +84,43 @@ class Tiket extends CI_Controller
     }
     public function afterbeli($jadwal = "", $asal = '', $tanggal = '')
     {
+        $no_ktp = $this->session->userdata('ktp');
+        $kd = $this->session->userdata('kd_pelanggan');
+        if (empty($no_ktp)) {
+            $this->session->set_flashdata('message', 'swal("Kosong", "Lengkapi Profil Anda Terlebih Dahulu", "error");');
+            redirect('profile/profilesaya/'.$kd);;
+        }else{
+            $array = array(
+                'jadwal'  => $jadwal,
+                'asal'    => $asal,
+                'tanggal' => $tanggal,
+            );
+            $this->session->set_userdata($array);
+            $id              = $jadwal;
+            $asal               = $asal;
+            $data['kursi']        = [1];
+            $data['tanggal']      = $tanggal;
+            $data['asal']         = $this->db->query("SELECT * FROM tbl_tujuan  WHERE kd_tujuan ='".$asal."'")->row_array();
+            $data['bank']         = $this->db->query("SELECT * FROM `tbl_bank` ")->result_array();
+            $data['jadwal']       = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan WHERE kd_jadwal ='".$id."'")->row_array();
+            $data['kd_jadwal']    = $this->session->userdata('jadwal');
+            $data['kd_asal']         = $this->session->userdata('asal');
+            $data['tglberangkat'] = $tanggal;
+            if ($data['kursi']) {
+                // die(print_r($data));
+                $this->load->view('frontend/beli_step2', $data);
+            } else {
+                $this->session->set_flashdata('message', 'swal("Kosong", "Pilih Kursi Anda", "error");');
+                redirect('tiket/beforebeli/'.$data['asal'].'/'.$data['kd_jadwal']);
+            }
+        }   
         // die(print_r($_GET));
-        $array = array(
-            'jadwal'  => $jadwal,
-            'asal'    => $asal,
-            'tanggal' => $tanggal,
-        );
-        $this->session->set_userdata($array);
-        $id              = $jadwal;
-        $asal               = $asal;
-        $data['kursi']        = [1];
-        $data['tanggal']      = $tanggal;
-        $data['asal']         = $this->db->query("SELECT * FROM tbl_tujuan  WHERE kd_tujuan ='".$asal."'")->row_array();
-        $data['bank']         = $this->db->query("SELECT * FROM `tbl_bank` ")->result_array();
-        $data['jadwal']       = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan WHERE kd_jadwal ='".$id."'")->row_array();
-        $data['kd_jadwal']    = $this->session->userdata('jadwal');
-        $data['kd_asal']         = $this->session->userdata('asal');
-        $data['tglberangkat'] = $tanggal;
-        if ($data['kursi']) {
-            // die(print_r($data));
-            $this->load->view('frontend/beli_step2', $data);
-        } else {
-            $this->session->set_flashdata('message', 'swal("Kosong", "Pilih Kursi Anda", "error");');
-            redirect('tiket/beforebeli/'.$data['asal'].'/'.$data['kd_jadwal']);
-        }
     }
     public function gettiket($value = '')
     {
         // die(print_r($_POST));
         include 'assets/phpqrcode/qrlib.php';
+       
         $asal = $this->db->query("SELECT * FROM tbl_tujuan
                WHERE kd_tujuan ='".$this->session->userdata('asal')."'")->row_array();
         $getkode      = $this->getkod_model->get_kodtmporder();
@@ -123,7 +131,7 @@ class Tiket extends CI_Controller
         $nama         = $this->input->post('nama_pemesan');
         $kursi        = [1];
         $tahun        = $this->input->post('tahun');
-        $no_ktp       = $this->input->post('no_ktp');
+        $no_ktp       = $this->session->userdata('ktp');
         $nama_pemesan = $this->input->post('nama_pemesan');
         $hp           = $this->input->post('hp');
         $alamat       = $this->input->post('alamat');

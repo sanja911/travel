@@ -63,9 +63,7 @@
 								</div>
 								<div class="card-body">
 									<div class='form-group'>
-										<div class='col-sm-12'>
-											<input name='no_ktp' required="" maxlength='64' class='form-control required' placeholder='Nomor KTP' type='text' title='Nomor ktp harus diisi.' value="<?php echo $this->session->userdata('ktp') ?>"></div>
-										</div>
+										
 										<div class='form-group'>
 											<div class='col-sm-12'>
 												<input name='nama_pemesan' required="" maxlength='64' class='form-control required' placeholder='Nama Pemesan' type='text' title='Nama Pemesan harus diisi.' value="<?php echo $this->session->userdata('nama_lengkap') ?>"></div>
